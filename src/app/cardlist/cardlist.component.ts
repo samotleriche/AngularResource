@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { Post } from './post';
+import { Component, OnInit } from '@angular/core';
+import { Post } from '../post';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-cardlist',
+  templateUrl: './cardlist.component.html',
+  styleUrls: ['./cardlist.component.css'],
 })
-export class AppComponent {
-  title = 'cards';
+export class CardlistComponent implements OnInit {
+  constructor() {}
 
   posts: Post[] = [
     {
@@ -29,4 +29,6 @@ export class AppComponent {
       content: 'I did some biking today',
     },
   ];
+
+  ngOnInit(): void {}
 }

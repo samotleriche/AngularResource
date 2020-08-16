@@ -1,0 +1,16 @@
+.successGreen {
+  color: green;
+}
+
+.failRed {
+  color: red;
+}
+
+.failUnderline {
+  color: red;
+  text-decoration: underline;
+}
+
+.pending {
+  text-decoration: underline;
+}

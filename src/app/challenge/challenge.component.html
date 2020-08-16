@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h1 class="title has-text-centered">Typing Challenge</h1>
+      <div class="container">
+        <button class="button is-link is-fullwidth" (click)="getLorem()">
+          new sentence
+        </button>
+      </div>
+
+      <p class="has-text-centered">
+        <span
+          *ngFor="let char of randomText.split(''); let i = index"
+          [class]="compare(char, enteredText[i])"
+          >{{ char }}</span
+        >
+      </p>
+
+      <div class="field">
+        <div class="control">
+          <input
+            class="input"
+            (input)="onInput($event.target.value)"
+            [value]="enteredText"
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="box has-text-centered" *ngIf="enteredText === randomText">
+        <h1 class="title">Success!</h1>
+      </div>
+    </div>
+  </div>
+</div>

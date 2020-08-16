@@ -1,0 +1,48 @@
+<div class="container">
+  <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+    <a
+      class="pagination-previous"
+      [attr.disabled]="currentPage === 0 ? 'true' : null"
+      (click)="currentPage > 0 ? (currentPage = currentPage - 1) : null"
+      >Previous</a
+    >
+    <a
+      class="pagination-next"
+      [attr.disabled]="currentPage === images.length - 1 ? 'true' : null"
+      (click)="
+        currentPage < images.length - 1 ? (currentPage = currentPage + 1) : null
+      "
+      >Next page</a
+    >
+    <ul class="pagination-list">
+      <li *ngFor="let image of images; let i = index">
+        <a
+          *ngIf="checkWindowIndex(i)"
+          (click)="currentPage = i"
+          class="pagination-link"
+          aria-label="Goto page 1"
+          [appClass]="{ 'is-current': i === currentPage }"
+          >{{ i + 1 }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="container">
+  <div class="box">
+    <h4>{{ images[currentPage].title }}</h4>
+    <img [src]="images[currentPage].url" alt="" />
+  </div>
+</div>
+<div [ngSwitch]="currentPage">
+  <div *ngSwitchCase="0">
+    <h1 class="title">Current page 0</h1>
+  </div>
+  <div *ngSwitchDefault>
+    <h1 class="title">Not page 0</h1>
+  </div>
+</div>
+
+<ul *appTimes="5; let i = index">
+  <li>Custome Directive doing this {{ i }}</li>
+</ul>
