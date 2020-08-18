@@ -1,1 +1,38 @@
-<p>collections-home works!</p>
+<app-divider>
+  Tab Menu
+</app-divider>
+<div class="container">
+  <div class="tabs is-centered is-boxed">
+    <ul>
+      <li
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <a routerLink="./">
+          <span>Biography</span>
+        </a>
+      </li>
+      <li routerLinkActive="is-active">
+        <a routerLink="companies">
+          <span>Companies</span>
+        </a>
+      </li>
+      <li routerLinkActive="is-active">
+        <a routerLink="partners">
+          <span>Partners</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<app-divider>
+  Table Component
+</app-divider>
+<app-table
+  classNames="is-striped is-hoverable is-bordered"
+  [data]="data"
+  [headers]="headers"
+></app-table>

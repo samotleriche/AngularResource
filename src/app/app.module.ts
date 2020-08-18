@@ -14,8 +14,6 @@ import { PagesComponent } from './pages/pages.component';
 import { ClassDirective } from './class.directive';
 import { TimesDirective } from './times.directive';
 import { CompsComponent } from './comps/comps.component';
-import { ElementsModule } from './elements/elements.module';
-import { CollectionsModule } from './collections/collections.module';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
@@ -35,13 +33,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ElementsModule,
-    CollectionsModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
