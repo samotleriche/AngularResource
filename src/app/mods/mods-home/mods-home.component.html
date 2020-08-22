@@ -1,0 +1,18 @@
+<app-divider>
+  Modal
+</app-divider>
+<button class="button" (click)="onClick()">Open Modal</button>
+<app-modal (closeEvent)="onClick()" *ngIf="modalOpen">
+  <div modalTitle>
+    {{ "custom content woo" | titlecase }}
+  </div>
+  custome content2
+  <ng-container modalFooter>
+    <a (click)="onClick()" class="card-footer-item added">Close Me!</a>
+  </ng-container>
+</app-modal>
+
+<app-divider>
+  Accordian
+</app-divider>
+<app-accordian [items]="items"></app-accordian>
